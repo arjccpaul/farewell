@@ -1,0 +1,187 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #d6d6d6;
+    /* Light beige background like old paper */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image:
+        linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
+    background-size: 20px 20px;
+    background-color: #f5f0e1;
+}
+
+.container {
+    max-width: 1000px;
+    /* Adjusted max-width for a larger container */
+    margin: 20px auto;
+    background-color: #fcecca;
+    /* Background color for the container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow */
+    position: relative;
+    overflow: hidden;
+}
+
+.signature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns layout */
+    gap: 20px;
+    /* Gap between signature items */
+}
+
+.signature-item {
+    background-color: #fff;
+    /* White background for each signature block */
+    padding: 2px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for depth */
+    text-align: center;
+    position: relative;
+    /* Ensure gradient overlay is contained within item */
+    overflow: hidden;
+    /* Hide overflow of gradients */
+}
+
+.signature-item img {
+    max-width: 100%;
+    /* Ensure images don't exceed container width */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for depth */
+    position: relative;
+    z-index: 1;
+    /* Ensure image is above gradient overlays */
+    background-color: #fffff0;
+    /* Light beige background color */
+    background-image:
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.1) 2px,
+            rgba(0, 0, 0, 0.1) 4px);
+}
+
+.signature-item::before,
+.signature-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    /* Behind the image */
+    pointer-events: none;
+    /* Ensure clicks pass through */
+    background-image:
+        linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
+    background-size: 20px 20px;
+    mix-blend-mode: overlay;
+    /* Overlay blend mode for subtle effect */
+}
+
+h2 {
+    text-align: center;
+    color: #a15c0b;
+    font-size: 24px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    position: relative;
+    /* Ensure the border positions correctly */
+}
+
+h2::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    /* Adjust as needed to position the border */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    /* Width of the border */
+    height: 2px;
+    /* Height or thickness of the border */
+    background-color: #a15c0b;
+    /* Color of the border */
+    margin-top: 10px;
+    /* Padding between text and border */
+}
+
+.group-image-container {
+    text-align: center;
+    /* Center align the content */
+    margin-bottom: 20px;
+    /* Adjust margin as needed */
+}
+
+.group-image {
+    max-width: 100%;
+    /* Ensure image fits within its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    max-height: 200px;
+    /* Limit the maximum height of the image */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for depth */
+}
+
+.no-signature-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff5df;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #6b4f2b;
+    font-family: 'Georgia', serif;
+}
+
+.no-signature-message p {
+    margin: 0;
+    font-size: 20px;
+    color: #8c5700;
+}
+
+.other-btn {
+    margin-top: 30px;
+    /* Add margin space above the div */
+    text-align: center;
+    /* Center align the links horizontally */
+}
+
+.other-btn a {
+    display: inline-block;
+    margin: 0 10px;
+    /* Adjust margin between links */
+    padding: 12px 24px;
+    background-color: #008CBA;
+    /* Background color for links */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.other-btn a:hover {
+    background-color: #005F6B;
+    /* Darker shade on hover */
+}

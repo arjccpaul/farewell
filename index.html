@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farewell Message Generator</title>
-    <link rel="stylesheet" href="farewell.css"> <!-- Link to your CSS file -->
+    <title>Create a Heartfelt Farewell</title>
+    <link rel="icon" type="img/favico/favicon.ico" href="img/favico/favicon.ico"> <!-- Add this line for favicon -->
+    <link rel="stylesheet" href="farewell.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <div id="prompt-container">
-            <h2>Generate Farewell Message</h2>
+            <h2>Create a Heartfelt Farewell</h2>
             <form id="message-form">
                 <label for="colleague-name" class="colleague-label">Colleague's Name:</label>
                 <select id="colleague-name" class="colleague-select">
@@ -29,27 +31,39 @@
                 </select>
                 <br><br>
                 <button type="submit">Generate Message</button>
+                <!-- <a id="signHereLink" href="signature.html" target="_blank">Sign Here</a>
+                <a id="viewSignaturesLink" href="view_signatures.html" >View Signatures</a> -->
             </form>
-
         </div>
-
 
         <div id="message-container" style="display: none;">
             <h2>Thank You and Good Luck! Wishing you great success</h2>
-            <img id="profile-img" src="img/sourabh.jpg" alt="Sourabh's Photo">
+            <img id="profile-img" src="img/sourabh2.jpg" alt="Sourabh's Photo">
             <div id="farewell-message"></div>
             <div class="from-team">
                 <span class="frm">From</span>
                 <span class="frm-name">CCUS CUSTOM TEAM</span>
                 <div class="team-photo">
-                    <img id="team-photo" src="img/team.jpg" alt="Team Photo">
+                    <img id="team-photo" src="img/group.jpeg" alt="Team Photo">
                 </div>
             </div>
             <button type="button" id="reload-btn">Generate Again! <span class="fas fa-redo-alt"></span></button>
+            <div class="other-btn">
+                <a id="signHereLink" href="signature.html" target="_blank">Sign Here</a>
+                <a id="viewSignaturesLink" href="view_signatures.html" target="_blank">View Signatures</a>
+            </div>
+
         </div>
     </div>
 
-    <script src="farewell.js"></script> <!-- Link to your JavaScript file -->
+    <footer id="footer-signature" style="display: none;">
+        <div class="signature">
+            Presented By -> CCUS Custom Team
+        </div>
+    </footer>
+
+
+    <script src="farewell.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 

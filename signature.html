@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Pad</title>
+    <link rel="icon" type="img/favico/favicon.ico" href="img/favico/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="signature.css">
+</head>
+
+<body>
+    <div class="background-image">
+        <!-- Replace 'background.jpg' with your actual background image path -->
+        <img src="img/team-1.jpeg" alt="Background Image">
+    </div>
+    <div class="container">
+        <div class="signature-container">
+            <div class="signature-pad">
+                <h2>Leave Your Mark</h2>
+                <canvas id="signatureCanvas" width="500" height="200"></canvas>
+                <div class="signature-buttons">
+                    <button id="clearBtn">Clear</button>
+                    <button id="saveBtn">Save Signature</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="signature.js"></script>
+</body>
+
+</html>

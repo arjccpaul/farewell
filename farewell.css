@@ -274,6 +274,75 @@ button:hover {
     /* Add spacing between text and icon */
 }
 
+#signHereLink {
+    display: inline-block;
+    margin-left: 10px;
+    /* Adjust spacing between buttons */
+    padding: 12px 24px;
+    background-color: #008CBA;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+#signHereLink:hover {
+    background-color: #005F6B;
+}
+
+#viewSignaturesLink {
+    display: inline-block;
+    margin-left: 10px;
+    /* Adjust spacing between buttons */
+    padding: 12px 24px;
+    background-color: #008CBA;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+#viewSignaturesLink:hover {
+    background-color: #1e73ee;
+}
+
+.other-btn {
+    margin-top: 30px;
+    /* Add margin space above the div */
+    text-align: center;
+    /* Center align the links horizontally */
+}
+
+.other-btn a {
+    display: inline-block;
+    margin: 0 10px;
+    /* Adjust margin between links */
+    padding: 12px 24px;
+    background-color: #008CBA;
+    /* Background color for links */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.other-btn a:hover {
+    background-color: #005F6B;
+    /* Darker shade on hover */
+}
+
+
 /* #message-container {
     border: 2px solid #3b5998;
 } */
@@ -419,4 +488,41 @@ select::-ms-expand {
     /* Rounded border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Optional: Add shadow for depth */
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fcecca;
+    border-top: 1px solid #a15c0b;
+    color: #a15c0b;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: none;
+    /* Initially hidden */
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer .signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    color: #a15c0b;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    /* A more stylized cursive font */
+    font-size: 20px;
+    /* Slightly larger for better visibility */
+    color: #a15c0b;
+    letter-spacing: 1px;
+    /* Adds a bit of spacing between letters */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
 }

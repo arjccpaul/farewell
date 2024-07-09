@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Signatures</title>
+    <link rel="icon" type="image/x-icon" href="img/favico/favicon.ico"> <!-- Adjust the favicon path if needed -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Let's Make This Farewell Truly Memorable</h2>
+
+        <div class="group-image-container">
+            <img src="img/group1.jpeg" alt="Group Image" class="group-image">
+            <img src="img/group2.jpg" alt="Group Image" class="group-image">
+            <img src="img/group3.jpeg" alt="Group Image" class="group-image">
+        </div>
+
+        <div class="signature-grid">
+            <!-- Signatures will be dynamically added here -->
+        </div>
+
+        <div class="no-signature-message" style="display: none;">
+            <!-- Message shown when no signatures are available -->
+            <p>No signatures yet. Be the first to leave your mark!</p>
+            <div class="other-btn">
+                <a id="signHereLink" href="signature.html" target="_blank">Leave Your Mark</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('get_signatures.php')
+                .then(response => response.json()) // Parse response as JSON
+                .then(data => {
+                    const signatureGrid = document.querySelector('.signature-grid'); // Get reference to grid container
+                    const noSignatureMessage = document.querySelector('.no-signature-message');
+
+                    console.log('Signatures data:', data); // Check data received from server
+
+                    if (data.length === 0) {
+                        noSignatureMessage.style.display = 'block'; // Show message if no signatures
+                    } else {
+                        data.forEach((signature, index) => {
+                            const img = document.createElement('img'); // Create <img> element
+                            img.src = signature.signature_data; // Set image source to signature data
+                            img.alt = `Signature ${index + 1}`; // Set alt attribute for accessibility
+
+                            const div = document.createElement('div'); // Create <div> for each signature
+                            div.classList.add('signature-item'); // Add class for styling
+                            div.appendChild(img); // Append <img> to <div>
+
+                            signatureGrid.appendChild(div); // Append <div> to grid container
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching signatures:', error); // Log any fetch errors
+                });
+        });
+    </script>
+
+</body>
+
+</html>

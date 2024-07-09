@@ -1,3 +1,24 @@
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+    // Add event listener for the "Generate Message" button
+    const generateBtn = document.getElementById('message-form');
+    generateBtn.addEventListener('submit', generateFarewellMessage);
+
+    // Event listener for "Sign Here" link
+    const signHereLink = document.getElementById('signHereLink');
+    signHereLink.addEventListener('click', captureSignature);
+
+    // Check for existing signatures
+    checkForSignatures();
+
+    // Reload button functionality
+    const reloadBtn = document.getElementById('reload-btn');
+    reloadBtn.addEventListener('click', function () {
+        location.reload();
+    });
+
+});
+
 // Function to generate parts of the farewell message
 function getEmotionPart(name) {
     return `<span class="emotion">Words cannot capture the depth of our feelings as we say goodbye to you, <strong>${name}</strong>. It is one of the hardest things I've had to do. There will be no one to share secrets and jokes like you.</span>`;
@@ -27,6 +48,8 @@ function generateFarewellMessage(event) {
     const newTeam = 'new team'; //document.getElementById('new-team').value.trim();
     const newPosition = 'new position';//document.getElementById('new-position').value.trim();
     const from = document.getElementById('from-who').value.trim();
+    const footerSignature = document.getElementById('footer-signature');
+
 
     if (name && newTeam && newPosition && from) {
         const messageContainer = document.getElementById('message-container');
@@ -62,21 +85,34 @@ function generateFarewellMessage(event) {
         setTimeout(() => {
             farewellMessageElem.innerHTML += '<br>';
             farewellMessageElem.innerHTML += getHeartsPart();
+
+            // Show "Sign Here" link after generating message
+            document.getElementById('signHereLink').style.display = 'inline';
         }, 2500);
+
+        setTimeout(() => {
+            footerSignature.style.display = 'block';
+        }, 3000); // Adjust delay as necessary
     } else {
         alert('Please provide valid inputs for name, from.');
     }
 }
 
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Add event listener for the "Generate Message" button
-    const generateBtn = document.getElementById('message-form');
-    generateBtn.addEventListener('submit', generateFarewellMessage);
+// Function to capture signature link click
+function captureSignature() {
+    window.open('signature.html', '_blank');
+}
 
-    // Reload button functionality
-    const reloadBtn = document.getElementById('reload-btn');
-    reloadBtn.addEventListener('click', function () {
-        location.reload();
-    });
-});
+// Function to check for existing signatures
+function checkForSignatures() {
+    fetch('get_signatures.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                document.getElementById('viewSignaturesLink').style.display = 'inline';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching signatures:', error);
+        });
+}
