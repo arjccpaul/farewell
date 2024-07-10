@@ -22,18 +22,21 @@ body {
 .background-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    /* Ensure the image covers the entire background */
+    object-fit: cover; /* Ensures the image covers the entire background */
+    object-position: center; /* Centers the image within its container */
 }
 
 .container {
-    background-color: rgb(189 189 189 / 80%);
+    background-color: rgba(189, 189, 189, 0.8); /* Use rgba for transparency */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     width: 40%;
+    position: relative; /* Ensure stacking context for z-index */
+    z-index: 1; /* Ensure content is above the background image */
 }
+
 
 .signature-container {
     position: relative;
