@@ -100,7 +100,7 @@ function generateFarewellMessage(event) {
 
 // Function to capture signature link click
 function captureSignature() {
-    window.open('signature.html', '_blank');
+    window.open('/signature', '_blank');
 }
 
 // Function to check for existing signatures

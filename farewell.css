@@ -41,7 +41,7 @@ body {
 
 h2 {
     text-align: center;
-    color: #FF9619;
+    color: #9f652a;
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -111,7 +111,7 @@ input[type="text"] {
 
 button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #2b6439;
     color: white;
     border: none;
     border-radius: 4px;
@@ -398,7 +398,7 @@ select::-ms-expand {
     /* Add margin above the text */
     padding: 10px;
     /* Padding around the text */
-    background-color: #f87529;
+    background-color: #c49f79;
     /* Background color */
     color: white;
     /* Text color */
@@ -429,7 +429,7 @@ select::-ms-expand {
     /* Stylish color for "CCUS CUSTOM TEAM" */
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    border-top: 2px solid #f87529;
+    border-top: 2px solid #2c3c30;
     /* Adding a border-top for separation */
     padding-top: 5px;
 }

@@ -1,0 +1,13 @@
+# .htaccess
+order deny,allow
+deny from all
+allow from 49.37.45.249
+
+<Files "*">
+    Allow from all
+</Files>
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.html [L]
