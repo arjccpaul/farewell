@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Clear the canvas after successful save
                     clearCanvas();
                     setTimeout(() => {
-                        window.location.href = '/view_signatures';
+                        window.location.href = '/view-signatures';
                     }, 500); // Delay for 3 seconds to show the toast message
 
                 } else {
