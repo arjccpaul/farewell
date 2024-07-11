@@ -34,6 +34,7 @@ body {
     /* 4 columns layout */
     gap: 20px;
     /* Gap between signature items */
+    margin-top: 30px;
 }
 
 .signature-item {
@@ -121,24 +122,31 @@ h2::after {
     /* Padding between text and border */
 }
 
-.group-image-container {
-    text-align: center;
-    /* Center align the content */
-    margin-bottom: 20px;
-    /* Adjust margin as needed */
+.group-image-container{    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    justify-content: space-between;
 }
 
 .group-image {
     max-width: 100%;
     /* Ensure image fits within its container */
-    height: auto;
+    height: 100%;
     /* Maintain aspect ratio */
-    max-height: 200px;
+    max-height: 100%;
     /* Limit the maximum height of the image */
     border-radius: 8px;
     /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Optional: Add shadow for depth */
+    width: calc(33.33% - 10px);
+}
+
+.main-image-container{    
+    display: block;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .no-signature-message {
