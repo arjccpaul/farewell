@@ -1,7 +1,7 @@
 # .htaccess
-order deny,allow
-deny from all
-allow from 49.37.45.249
+#order deny,allow
+#deny from all
+#allow from 49.37.45.249
 
 <Files "*">
     Allow from all
